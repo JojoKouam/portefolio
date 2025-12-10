@@ -2,36 +2,76 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, Github, Linkedin, Mail, Download,  Menu, X  } from "lucide-react";
 import { HERO, PROJECTS, SERVICES, SKILLS } from "@/data/portfolio";
 import { useForm, ValidationError } from '@formspree/react';
+import { useState } from "react"; 
 
 export default function Home() {
   const [state, handleSubmit] = useForm("mnneggnn");
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
   if (state.succeeded) {
       return (
         <main className="min-h-screen">
       {/*  NAVBAR  */}
-      <nav className="fixed top-0 w-full z-50 glass">
+      <nav className="fixed top-0 w-full z-50 glass border-b border-gray-800/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-tighter">
+          
+          {/* Logo */}
+          <h1 className="text-2xl font-bold tracking-tighter relative z-50">
             JK<span className="text-purple-500">.</span>
           </h1>
+          
+          {/* MENU ORDI */}
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
             <a href="#home" className="hover:text-white transition">Accueil</a>
             <a href="#about" className="hover:text-white transition">À propos</a>
             <a href="#projects" className="hover:text-white transition">Projets</a>
             <a href="#contact" className="hover:text-white transition">Contact</a>
           </div>
+
+          {/* Bouton Contact Ordi */}
           <a 
             href="#contact" 
-            className="hidden md:block border border-purple-500 text-purple-400 px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-500 hover:text-white transition"
+            className="hidden md:block border border-purple-500/50 text-purple-400 px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-600 hover:text-white transition"
           >
-            Me contacter ↗
+            Me contacter
           </a>
+
+          {/* BOUTON BURGER MOBILE  */}
+          <button 
+            className="md:hidden text-white z-50 relative"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+
+        {/*  MENU MOBILE DÉROULANT  */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-0 left-0 w-full bg-[#0B0B15] border-b border-gray-800 shadow-2xl md:hidden flex flex-col items-center pt-24 pb-10 gap-8 z-40"
+            >
+              <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">Accueil</a>
+              <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">À propos</a>
+              <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">Projets</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">Contact</a>
+              
+              <a 
+                href="#contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="gradient-bg text-white px-8 py-3 rounded-full font-bold shadow-lg"
+              >
+                Me contacter
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/*  HERO SECTION*/}
@@ -122,24 +162,63 @@ export default function Home() {
     <main className="min-h-screen">
       
       {/*  NAVBAR  */}
-      <nav className="fixed top-0 w-full z-50 glass">
+      <nav className="fixed top-0 w-full z-50 glass border-b border-gray-800/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-tighter">
+          
+          {/* Logo */}
+          <h1 className="text-2xl font-bold tracking-tighter relative z-50">
             JK<span className="text-purple-500">.</span>
           </h1>
+          
+          {/* MENU ORDI (Caché sur mobile) */}
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
             <a href="#home" className="hover:text-white transition">Accueil</a>
             <a href="#about" className="hover:text-white transition">À propos</a>
             <a href="#projects" className="hover:text-white transition">Projets</a>
             <a href="#contact" className="hover:text-white transition">Contact</a>
           </div>
+
+          {/* Bouton Contact Ordi */}
           <a 
             href="#contact" 
-            className="hidden md:block border border-purple-500 text-purple-400 px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-500 hover:text-white transition"
+            className="hidden md:block border border-purple-500/50 text-purple-400 px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-600 hover:text-white transition"
           >
-            Me contacter ↗
+            Me contacter
           </a>
+
+          {/* BOUTON BURGER MOBILE (Visible uniquement sur mobile) */}
+          <button 
+            className="md:hidden text-white z-50 relative"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+
+        {/*  MENU MOBILE DÉROULANT  */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-0 left-0 w-full bg-[#0B0B15] border-b border-gray-800 shadow-2xl md:hidden flex flex-col items-center pt-24 pb-10 gap-8 z-40"
+            >
+              <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">Accueil</a>
+              <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">À propos</a>
+              <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">Projets</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-gray-300 hover:text-purple-500 transition">Contact</a>
+              
+              <a 
+                href="#contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="gradient-bg text-white px-8 py-3 rounded-full font-bold shadow-lg"
+              >
+                Me contacter
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/*  HERO SECTION*/}
