@@ -10,120 +10,10 @@ import { useForm, ValidationError } from '@formspree/react';
 export default function Home() {
   const [state, handleSubmit] = useForm("mnneggnn");
 
-  // 3. SI LE MESSAGE EST ENVOYÉ, AFFICHE ÇA À LA PLACE DU FORMULAIRE
   if (state.succeeded) {
       return (
         <main className="min-h-screen">
-      {/* --- NAVBAR --- */}
-      <nav className="fixed top-0 w-full z-50 glass">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-tighter">
-            JK<span className="text-purple-500">.</span>
-          </h1>
-          <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-            <a href="#home" className="hover:text-white transition">Accueil</a>
-            <a href="#about" className="hover:text-white transition">À propos</a>
-            <a href="#projects" className="hover:text-white transition">Projets</a>
-            <a href="#contact" className="hover:text-white transition">Contact</a>
-          </div>
-          <a 
-            href="#contact" 
-            className="hidden md:block border border-purple-500 text-purple-400 px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-500 hover:text-white transition"
-          >
-            Me contacter ↗
-          </a>
-        </div>
-      </nav>
-
-      {/*  HERO SECTION*/}
-      <section id="home" className="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[80vh]">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.5 }}
-        >
-          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
-            
-            <div className="w-full h-full bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
-               <span className="text-3xl">👩‍💻</span> 
-            </div>
-          </div>
-
-          <h2 className="text-gray-400 font-medium mb-4">Salut ! Je suis {HERO.name} 👋</h2>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Développeuse <br />
-            <span className="gradient-text">Full Stack & Mobile</span>
-          </h1>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            {HERO.description}
-          </p>
-
-          <div className="flex flex-wrap justify-center items-center gap-4 mt-8">
-            
-            {/* Bouton Contact (Principal) */}
-            <a href="#contact" className="gradient-bg px-8 py-3 rounded-full font-bold shadow-lg shadow-purple-500/20 hover:scale-105 transition-transform flex items-center gap-2 text-white">
-              Me contacter <ArrowRight size={18} />
-            </a>
-            
-            {/* Bouton CV (Secondaire) */}
-            <a href="/cv.pdf" target="_blank" className="border border-gray-700 bg-white/5 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition flex items-center gap-2">
-              CV <Download size={18} />
-            </a>
-
-            {/* --- NOUVEAU : Les Réseaux Sociaux (Carrés) --- */}
-            <div className="flex gap-3 ml-2">
-              <a 
-                href="https://linkedin.com/in/ton-profil" // Remplace par ton lien
-                target="_blank"
-                className="p-3 bg-white/10 border border-gray-700 rounded-xl hover:bg-[#0077b5] hover:border-[#0077b5] hover:text-white transition-all duration-300 group"
-                title="LinkedIn"
-              >
-                <Linkedin size={20} className="text-gray-400 group-hover:text-white transition-colors" />
-              </a>
-              
-              <a 
-                href="https://github.com/JojoKouam" 
-                target="_blank"
-                className="p-3 bg-white/10 border border-gray-700 rounded-xl hover:bg-white hover:border-white hover:text-black transition-all duration-300 group"
-                title="GitHub"
-              >
-                <Github size={20} className="text-gray-400 group-hover:text-black transition-colors" />
-              </a>
-              <a 
-              href="mailto:anabelle.kouame@epitech.eu" // 👈 Mets ton mail Epitech ici
-              className="p-3 bg-white/10 border border-gray-700 rounded-xl hover:bg-white hover:border-white hover:text-black transition-all duration-300 group"
-              title="Envoyer un email"
-            >
-              {/* Icône Mail (déjà importée de Lucide normalement) */}
-              <Mail size={20} className="text-gray-400 group-hover:text-black transition-colors" />
-            </a>
-            </div>
-
-          </div>
-        </motion.div>
-      </section>           
-           <section id="contact" className="py-24 px-6 max-w-2xl mx-auto text-center">
-             <div className="bg-green-500/10 border border-green-500 p-8 rounded-2xl">
-               <h2 className="text-2xl font-bold text-green-500 mb-2">Message envoyé ! </h2>
-               <p className="text-gray-300">Merci de m&apos;avoir contactée. Je vous répondrai très vite.</p>
-               <button onClick={() => window.location.reload()} className="mt-4 text-sm underline text-gray-400">Envoyer un autre message</button>
-             </div>
-           </section>
-
- <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-800">
-        <p>© 2025 Anabelle Kouamé. Tous droits réservés.</p>
-        <div className="flex justify-center gap-4 mt-4">
-          <Link href="#" className="hover:text-purple-400 transition"><Github size={20} /></Link>
-          <Link href="#" className="hover:text-purple-400 transition"><Linkedin size={20} /></Link>
-          <Link href="#" className="hover:text-purple-400 transition"><Mail size={20} /></Link>
-        </div>
-      </footer>        </main>
-      );
-  }
-  return (
-    <main className="min-h-screen">
-      
-      {/* --- NAVBAR --- */}
+      {/*  NAVBAR  */}
       <nav className="fixed top-0 w-full z-50 glass">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold tracking-tighter">
@@ -169,17 +59,17 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center items-center gap-4 mt-8">
             
-            {/* Bouton Contact (Principal) */}
+            {/* Bouton Contact*/}
             <a href="#contact" className="gradient-bg px-8 py-3 rounded-full font-bold shadow-lg shadow-purple-500/20 hover:scale-105 transition-transform flex items-center gap-2 text-white">
               Me contacter <ArrowRight size={18} />
             </a>
             
-            {/* Bouton CV (Secondaire) */}
+            {/* Bouton CV  */}
             <a href="/cv.pdf" target="_blank" className="border border-gray-700 bg-white/5 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition flex items-center gap-2">
               CV <Download size={18} />
             </a>
 
-            {/* --- NOUVEAU : Les Réseaux Sociaux (Carrés) --- */}
+            {/*  NOUVEAU : Les Réseaux Sociaux (Carrés)  */}
             <div className="flex gap-3 ml-2">
               <a 
                 href="https://linkedin.com/in/ton-profil" // Remplace par ton lien
@@ -198,21 +88,128 @@ export default function Home() {
               >
                 <Github size={20} className="text-gray-400 group-hover:text-black transition-colors" />
               </a>
+              <a 
+              href="mailto:anabelle.kouame@epitech.eu"
+              className="p-3 bg-white/10 border border-gray-700 rounded-xl hover:bg-white hover:border-white hover:text-black transition-all duration-300 group"
+              title="Envoyer un email"
+            >
+              <Mail size={20} className="text-gray-400 group-hover:text-black transition-colors" />
+            </a>
+            </div>
+
+          </div>
+        </motion.div>
+      </section>           
+           <section id="contact" className="py-24 px-6 max-w-2xl mx-auto text-center">
+             <div className="bg-green-500/10 border border-green-500 p-8 rounded-2xl">
+               <h2 className="text-2xl font-bold text-green-500 mb-2">Message envoyé ! </h2>
+               <p className="text-gray-300">Merci de m&apos;avoir contactée. Je vous répondrai très vite.</p>
+               <button onClick={() => window.location.reload()} className="mt-4 text-sm underline text-gray-400">Envoyer un autre message</button>
+             </div>
+           </section>
+
+ <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-800">
+        <p>© 2025 Anabelle Kouamé. Tous droits réservés.</p>
+        <div className="flex justify-center gap-4 mt-4">
+          <Link href="#" className="hover:text-purple-400 transition"><Github size={20} /></Link>
+          <Link href="#" className="hover:text-purple-400 transition"><Linkedin size={20} /></Link>
+          <Link href="#" className="hover:text-purple-400 transition"><Mail size={20} /></Link>
+        </div>
+      </footer>        </main>
+      );
+  }
+  return (
+    <main className="min-h-screen">
+      
+      {/*  NAVBAR  */}
+      <nav className="fixed top-0 w-full z-50 glass">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold tracking-tighter">
+            JK<span className="text-purple-500">.</span>
+          </h1>
+          <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+            <a href="#home" className="hover:text-white transition">Accueil</a>
+            <a href="#about" className="hover:text-white transition">À propos</a>
+            <a href="#projects" className="hover:text-white transition">Projets</a>
+            <a href="#contact" className="hover:text-white transition">Contact</a>
+          </div>
+          <a 
+            href="#contact" 
+            className="hidden md:block border border-purple-500 text-purple-400 px-5 py-2 rounded-full text-sm font-bold hover:bg-purple-500 hover:text-white transition"
+          >
+            Me contacter ↗
+          </a>
+        </div>
+      </nav>
+
+      {/*  HERO SECTION*/}
+      <section id="home" className="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[80vh]">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.5 }}
+        >
+          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
+            
+            <div className="w-full h-full bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
+               <span className="text-3xl">👩‍💻</span> 
+            </div>
+          </div>
+
+          <h2 className="text-gray-400 font-medium mb-4">Salut ! Je suis {HERO.name} 👋</h2>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Développeuse <br />
+            <span className="gradient-text">Full Stack Junior</span>
+          </h1>
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+            {HERO.description}
+          </p>
+
+          <div className="flex flex-wrap justify-center items-center gap-4 mt-8">
+            
+            {/* Bouton Contact */}
+            <a href="#contact" className="gradient-bg px-8 py-3 rounded-full font-bold shadow-lg shadow-purple-500/20 hover:scale-105 transition-transform flex items-center gap-2 text-white">
+              Me contacter <ArrowRight size={18} />
+            </a>
+            
+            {/* Bouton CV  */}
+            <a href="/cv.pdf" target="_blank" className="border border-gray-700 bg-white/5 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition flex items-center gap-2">
+              CV <Download size={18} />
+            </a>
+
+            {/*  Les Réseaux Sociaux   */}
+            <div className="flex gap-3 ml-2">
+              <a 
+                href="https://linkedin.com/in/ton-profil"
+                target="_blank"
+                className="p-3 bg-white/10 border border-gray-700 rounded-xl hover:bg-[#0077b5] hover:border-[#0077b5] hover:text-white transition-all duration-300 group"
+                title="LinkedIn"
+              >
+                <Linkedin size={20} className="text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+              
+              <a 
+                href="https://github.com/JojoKouam" 
+                target="_blank"
+                className="p-3 bg-white/10 border border-gray-700 rounded-xl hover:bg-white hover:border-white hover:text-black transition-all duration-300 group"
+                title="GitHub"
+              >
+                <Github size={20} className="text-gray-400 group-hover:text-black transition-colors" />
+              </a>
             </div>
 
 <a 
-              href="mailto:anabelle.kouame@epitech.eu" // 👈 Mets ton mail Epitech ici
+              href="mailto:anabelle.kouame@epitech.eu" 
               className="p-3 bg-white/10 border border-gray-700 rounded-xl hover:bg-white hover:border-white hover:text-black transition-all duration-300 group"
               title="Envoyer un mail à anabelle.kouame@epitech.eu"
             >
-              {/* Icône Mail (déjà importée de Lucide normalement) */}
               <Mail size={20} className="text-gray-400 group-hover:text-black transition-colors" />
             </a>
           </div>
         </motion.div>
       </section>
 
-      {/* --- ABOUT SECTION (Split Image / Text) --- */}
+      {/*  ABOUT SECTION (Split Image / Text)  */}
       <section id="about" className="py-20 bg-[#0f0f1c]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           {/* Image à gauche (Placeholder) */}
@@ -239,11 +236,14 @@ export default function Home() {
              viewport={{ once: true }}
           >
             <span className="text-purple-400 font-bold tracking-widest text-sm">À PROPOS</span>
-            <h2 className="text-3xl font-bold mt-2 mb-6">Un parcours analytique au service de la Tech.</h2>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Venant du monde de l&apos;économie, j&apos;ai développé une rigueur et une capacité d&apos;analyse que j&apos;applique aujourd&apos;hui dans l&apos;architecture de mes applications.
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Curieuse, Logique et Créative.</h2>
+            
+            <p className="text-gray-400 mb-8 leading-relaxed text-lg">
+              Le développement web est pour moi le parfait équilibre entre logique et créativité. 
               <br /><br />
-              Je ne code pas juste pour coder : je cherche à résoudre des problèmes concrets avec des solutions élégantes et performantes.
+              Au cours de ma  formation intensive  j&apos;ai touché à tout (Mobile, Web, BDD),  des stacks modernes comme <strong className="text-white">VueJS</strong>, <strong className="text-white">Laravel</strong>, <strong className="text-white">React</strong> et <strong className="text-white">Next.js</strong>.
+              <br /><br />
+              Mon moteur ? L&apos;envie d&apos;apprendre une nouvelle chose chaque jour et la satisfaction de voir mon code prendre vie.
             </p>
 
             {/* Cartes Stats */}
@@ -256,16 +256,13 @@ export default function Home() {
                 <span className="block text-2xl font-bold text-white">6 mois</span>
                 <span className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wide">Formation WECODE</span>
               </div>
-              <div className="p-4 bg-[#1a1a2e] rounded-xl border border-gray-800 text-center">
-                <span className="block text-2xl font-bold text-white">3</span>
-                <span className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wide">Stacks Maîtrisées</span>
-              </div>
+              
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* --- COMPÉTENCES --- */}
+      {/*  COMPÉTENCES  */}
       <section className="py-24 px-6 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-purple-400 font-bold tracking-widest text-sm">STACK TECHNIQUE</span>
@@ -300,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- PROJETS (My Latest Work) --- */}
+      {/*  PROJETS  */}
       <section id="projects" className="py-20 bg-[#0f0f1c]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
@@ -351,9 +348,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold mt-2 mb-2 group-hover:text-purple-400 transition">{project.title}</h3>
                   <p className="text-sm text-gray-400 line-clamp-2">{project.description}</p>
 
-                  {/* <span className="text-xs font-bold text-purple-400 uppercase">{project.category}</span>
-                  <h3 className="text-xl font-bold mt-2 mb-3 text-white group-hover:text-purple-400 transition">{project.title}</h3>
-                  <p className="text-sm text-gray-400 line-clamp-2 mb-4">{project.description}</p> */}
+                
                   
                   {/* 👇 AJOUTE CE BLOC POUR LES TAGS 👇 */}
                   <div className="flex flex-wrap gap-2 mt-auto">
@@ -370,57 +365,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- CONTACT FORM --- */}
-      {/* <section id="contact" className="py-24 px-6 max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Travaillons ensemble !</h2>
-        <p className="text-gray-400 mb-10">
-          Vous avez un projet ou une opportunité ? N&apos;hésitez pas à m&apos;envoyer un message.
-        </p>
-
-         <form 
-          action="https://formspree.io/f/xkgdqvbo" 
-          method="POST"
-          className="space-y-4 text-left"
-        >
-          <div className="grid md:grid-cols-2 gap-4"> */}
-            {/* <div className="space-y-2">
-              <label className="text-sm text-gray-400 ml-1">Nom</label>
-              <input 
-                type="text" 
-                name="name" 
-                required
-                className="w-full bg-[#1a1a2e] border border-gray-800 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition text-white" 
-                placeholder="Votre nom" 
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm text-gray-400 ml-1">Email</label>
-              <input 
-                type="email" 
-                name="email" 
-                required
-                className="w-full bg-[#1a1a2e] border border-gray-800 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition text-white" 
-                placeholder="votre@email.com" 
-              />
-            </div>
-          </div>
-          
-          <div className="space-y-2">
-            <label className="text-sm text-gray-400 ml-1">Message</label>
-            <textarea 
-              name="message" 
-              rows={5} 
-              required
-              className="w-full bg-[#1a1a2e] border border-gray-800 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition text-white" 
-              placeholder="Bonjour, j'aimerais discuter de..."
-            ></textarea>
-          </div> */}
-
-          {/* <button type="submit" className="w-full gradient-bg text-white font-bold py-4 rounded-xl hover:opacity-90 transition shadow-lg shadow-purple-500/20">
-            Envoyer le message
-          </button>
-        </form> */}
-
+      {/*  CONTACT FORM  */}
 
 
 
@@ -484,15 +429,15 @@ export default function Home() {
 
 
 
-      {/* </section> */}
 
-      {/* --- FOOTER --- */}
+      {/*  FOOTER  */}
       <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-800">
-        <p>© 2025 Anabelle Kouamé. Tous droits réservés.</p>
+        <p>© 2025 Anabelle Josée Kouamé. Tous droits réservés.</p>
         <div className="flex justify-center gap-4 mt-4">
-          <Link href="#" className="hover:text-purple-400 transition"><Github size={20} /></Link>
-          <Link href="#" className="hover:text-purple-400 transition"><Linkedin size={20} /></Link>
-          <Link href="#" className="hover:text-purple-400 transition"><Mail size={20} /></Link>
+          <Link href="https://github.com/JojoKouam/" className="hover:text-purple-400 transition"><Github size={20} /></Link>
+          <Link href="https://www.linkedin.com/in/jos%C3%A9e-kouam%C3%A9-aab0471a8/" className="hover:text-purple-400 transition"><Linkedin size={20} /></Link>
+          <Link href="mailto:anabelle.kouame@epitech.eu" className="hover:text-purple-400 transition" title="Envoyer un mail à anabelle.kouame@epitech.eu"
+><Mail size={20} /></Link>
         </div>
       </footer>
 

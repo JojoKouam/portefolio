@@ -3,7 +3,7 @@ import { Layout, Smartphone, Globe, Database, Server, Code, PenTool } from "luci
 export const HERO = {
   name: "Anabelle Josée Kouamé",
   role: "Développeuse Full Stack",
-  description: "J'ai troqué l'économie pour le code. Je conçois des applications web robustes et modernes avec une approche centrée sur la performance et l'expérience utilisateur.",
+  description: "Développeuse passionnée par la création numérique. Curieuse et dynamique , j'aime comprendre et apprendre et  bâtir des projets web modernes",
 };
 
 export const SERVICES = [
@@ -31,7 +31,7 @@ export const SKILLS = [
   { 
     category: "Outils & Design", 
     icon: PenTool,
-    tools: ["Git / GitHub", "Figma", "VS Code", "Vercel"]
+    tools: ["Git / GitHub", "Figma", "VS Code", "Linux"]
   }
 ];
 
@@ -40,11 +40,11 @@ export const PROJECTS = [
     id: 1,
     title: "CinéMathé",
     category: "Fullstack Next.js",
-    image: "/projects/cinemathe.png", // On s'occupera des images juste après
+    image: "/projects/cinemathe.png", 
     description: "Application complète de réservation de cinéma. Gestion des sièges en temps réel, paiement simulé, dashboard administrateur et authentification sécurisée.",
     tech: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Tailwind"],
-    link: "https://cinemathe-jodev.vercel.app/", // Ton lien Vercel
-    github: "https://github.com/JojoKouam/movie", // Ton lien GitHub
+    link: "https://cinemathe-jodev.vercel.app/", 
+    github: "https://github.com/JojoKouam/movie", 
   }, 
   {
     id: 2,
@@ -65,7 +65,7 @@ export const PROJECTS = [
     description: "Plateforme des annonces d'évenement.",
     tech: ["Nestjs", "MongoDB", "Tailwind"],
     link: "#", 
-    github: "https://github.com/JojoKouam/", // Mets le lien GitHub
+    github: "https://github.com/JojoKouam/", 
   },
 //   {
 //     id: 4,
@@ -78,25 +78,25 @@ export const PROJECTS = [
 //     github: "#",
 //   },
  {
-    id: 5, // Nouvel ID
+    id: 5, 
     title: "Lipsy",
     category: "Social App / PHP",
-    image: "/projects/lipsy.png", // N'oublie pas la capture !
+    image: "/projects/lipsy.png", 
     description: "Réseau social innovant basé sur la voix. Enregistrement et partage de notes vocales (60s), fil d'actualité audio, réactions et commentaires.",
     tech: ["PHP 8", "MySQL", "JavaScript", "Bootstrap 5"],
-    link: "https://p6-groupeb.com/josee/lipsy_voice/", // Mets le lien si tu l'as
-    github: "#", // Mets le lien GitHub
+    link: "https://p6-groupeb.com/josee/lipsy_voice/", 
+    github: "#", 
   },
 
    {
-    id: 6, // Nouvel ID
+    id: 6, 
     title: "Chatbot",
     category: "WebApp",
-    image: "/projects/chatbot.png", // N'oublie pas la capture !
+    image: "/projects/chatbot.png", 
     description: "Chatbot sur des question immobilier.",
     tech: ["HTML", "CSS", "JavaScript", "API"],
-    link: "https://chatbot-immo-jodev.netlify.app/", // Mets le lien si tu l'as
-    github: "#", // Mets le lien GitHub
+    link: "https://chatbot-immo-jodev.netlify.app/",
+    github: "#", 
   },
   
 ];
