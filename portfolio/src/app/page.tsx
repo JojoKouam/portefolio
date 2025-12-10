@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, Download,  Menu, X  } from "lucide-react";
-import { HERO, PROJECTS, SERVICES, SKILLS } from "@/data/portfolio";
+import { HERO, PROJECTS,  SKILLS } from "@/data/portfolio";
 import { useForm, ValidationError } from '@formspree/react';
 import { useState } from "react"; 
 
@@ -81,7 +81,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.5 }}
         >
-          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
+          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-linear-to-r from-purple-500 to-pink-500 p-1">
             
             <div className="w-full h-full bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
                <span className="text-3xl">👩‍💻</span> 
@@ -228,7 +228,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.5 }}
         >
-          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
+          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-linear-to-r from-purple-500 to-pink-500 p-1">
             
             <div className="w-full h-full bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
                <span className="text-3xl">👩‍💻</span> 
@@ -297,7 +297,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             
-            className="relative aspect-[3/4] w-full max-w-md mx-auto rounded-2xl overflow-hidden bg-gray-800 border border-gray-700 shadow-2xl"
+            className="relative aspect-3/4 w-full max-w-md mx-auto rounded-2xl overflow-hidden bg-gray-800 border border-gray-700 shadow-2xl"
           >
              <Image 
                src="/mee.png" 
@@ -429,7 +429,7 @@ export default function Home() {
 
                 
                   
-                  {/* 👇 AJOUTE CE BLOC POUR LES TAGS 👇 */}
+                  {/*  AJOUTE CE BLOC POUR LES TAGS  */}
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tech.map((t) => (
                       <span key={t} className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">
