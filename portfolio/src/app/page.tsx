@@ -161,7 +161,7 @@ export default function Home() {
           <h2 className="text-gray-400 font-medium mb-4">Salut ! Je suis {HERO.name} 👋</h2>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Développeuse <br />
-            <span className="gradient-text">Full Stack & Mobile</span>
+            <span className="gradient-text">Full Stack Junior</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
             {HERO.description}
@@ -351,9 +351,9 @@ export default function Home() {
                   <h3 className="text-xl font-bold mt-2 mb-2 group-hover:text-purple-400 transition">{project.title}</h3>
                   <p className="text-sm text-gray-400 line-clamp-2">{project.description}</p>
 
-                  <span className="text-xs font-bold text-purple-400 uppercase">{project.category}</span>
+                  {/* <span className="text-xs font-bold text-purple-400 uppercase">{project.category}</span>
                   <h3 className="text-xl font-bold mt-2 mb-3 text-white group-hover:text-purple-400 transition">{project.title}</h3>
-                  <p className="text-sm text-gray-400 line-clamp-2 mb-4">{project.description}</p>
+                  <p className="text-sm text-gray-400 line-clamp-2 mb-4">{project.description}</p> */}
                   
                   {/* 👇 AJOUTE CE BLOC POUR LES TAGS 👇 */}
                   <div className="flex flex-wrap gap-2 mt-auto">

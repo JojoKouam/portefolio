@@ -49,7 +49,7 @@ export const PROJECTS = [
   {
     id: 2,
     title: "Post It",
-    category: "Web App",
+    category: "Web App/Vuejs",
     image: "/projects/postit.png",
     description: "Outil de prise de notes intuitif. Fonctionnalités d'ajout, suppression et modification dynamique des notes.",
     tech: ["Vue.js", "JavaScript", "Tailwind CSS"],
@@ -59,31 +59,31 @@ export const PROJECTS = [
   
   {
     id: 3,
-    title: "FreeAds",
-    category: "Laravel / Vue.js",
-    image: "/projects/freeads.png",
-    description: "Plateforme de petites annonces entre particuliers. Gestion complète des utilisateurs, CRUD des annonces et interface reactive.",
-    tech: ["Laravel", "PHP", "Vue.js", "MySQL", "Tailwind"],
-    link: "https://github.com/JojoKouam/movie", // Mets le lien si tu l'as, sinon laisse #
-    github: "#", // Mets le lien GitHub
+    title: "Showtime",
+    category: "Nest.js",
+    image: "/projects/show.jpeg",
+    description: "Plateforme des annonces d'évenement.",
+    tech: ["Nestjs", "MongoDB", "Tailwind"],
+    link: "#", 
+    github: "https://github.com/JojoKouam/", // Mets le lien GitHub
   },
-  {
-    id: 4,
-    title: "Trello-Tech",
-    category: "Mobile App",
-    image: "/projects/trello.png",
-    description: "Application mobile de gestion de tâches inspirée de Trello. Création de tableaux, listes et cartes avec une navigation fluide.",
-    tech: ["React Native", "Expo", "API Rest"],
-    link: "#",
-    github: "#",
-  },
+//   {
+//     id: 4,
+//     title: "Trello-Tech",
+//     category: "Mobile App",
+//     image: "/projects/trello.png",
+//     description: "Application mobile de gestion de tâches inspirée de Trello. Création de tableaux, listes et cartes avec une navigation fluide.",
+//     tech: ["React Native", "Expo", "API Rest"],
+//     link: "#",
+//     github: "#",
+//   },
  {
     id: 5, // Nouvel ID
     title: "Lipsy",
     category: "Social App / PHP",
     image: "/projects/lipsy.png", // N'oublie pas la capture !
     description: "Réseau social innovant basé sur la voix. Enregistrement et partage de notes vocales (60s), fil d'actualité audio, réactions et commentaires.",
-    tech: ["PHP 8", "MySQL", "MVC", "JavaScript", "Bootstrap 5"],
+    tech: ["PHP 8", "MySQL", "JavaScript", "Bootstrap 5"],
     link: "https://p6-groupeb.com/josee/lipsy_voice/", // Mets le lien si tu l'as
     github: "#", // Mets le lien GitHub
   },
@@ -91,7 +91,7 @@ export const PROJECTS = [
    {
     id: 6, // Nouvel ID
     title: "Chatbot",
-    category: "Social App / PHP",
+    category: "WebApp",
     image: "/projects/chatbot.png", // N'oublie pas la capture !
     description: "Chatbot sur des question immobilier.",
     tech: ["HTML", "CSS", "JavaScript", "API"],
