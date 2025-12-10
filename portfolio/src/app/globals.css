@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --background: #0B0B15; /* Le noir bleuté de la capture "Nova" */
