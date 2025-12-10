@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Download,  Menu, X  } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Download,  Menu, X, Smartphone  } from "lucide-react";
 import { HERO, PROJECTS,  SKILLS } from "@/data/portfolio";
 import { useForm, ValidationError } from '@formspree/react';
 import { useState } from "react"; 
@@ -454,6 +454,41 @@ export default function Home() {
         <p className="text-gray-400 mb-10">
           Vous avez un projet ou une opportunité ? N&apos;hésitez pas à m&apos;envoyer un message.
         </p>
+        {/* --- INFOS CONTACT DIRECT --- */}
+        <div className="flex flex-col md:flex-row justify-center gap-6 mb-10">
+          
+          {/* Bloc Email */}
+          <a href="mailto:anabelle.kouame@epitech.eu" className="flex items-center gap-3 bg-[#1a1a2e] border border-gray-800 px-6 py-4 rounded-xl hover:border-purple-500/50 transition group">
+            <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition">
+              <Mail size={24} />
+            </div>
+            <div className="text-left">
+              <p className="text-xs text-gray-500 uppercase font-bold">Email</p>
+              <p className="text-gray-300 font-medium">anabelle.kouame@epitech.eu</p>
+            </div>
+          </a>
+
+          {/* Bloc Téléphone */}
+          <a href="tel:+2250140936874" className="flex items-center gap-3 bg-[#1a1a2e] border border-gray-800 px-6 py-4 rounded-xl hover:border-purple-500/50 transition group">
+            <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition">
+              <Smartphone size={24} /> {/* N'oublie pas d'importer Smartphone de lucide-react */}
+            </div>
+            <div className="text-left">
+              <p className="text-xs text-gray-500 uppercase font-bold">Téléphone</p>
+              <p className="text-gray-300 font-medium">+225 01 40 93 68 74</p>
+            </div>
+          </a>
+
+        </div>
+
+         <div className="flex items-center gap-4 w-full max-w-lg mx-auto my-8">
+          <div className="h-px bg-gray-800 flex-1" />
+          <span className="text-gray-500 text-xs uppercase tracking-widest font-medium">
+            Ou via le formulaire
+          </span>
+          <div className="h-px bg-gray-800 flex-1" />
+        </div>
+        
         <form onSubmit={handleSubmit} className="space-y-4 text-left">
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
