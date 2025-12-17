@@ -471,7 +471,7 @@ export default function Home() {
           {/* Bloc Téléphone */}
           <a href="tel:+2250140936874" className="flex items-center gap-3 bg-[#1a1a2e] border border-gray-800 px-6 py-4 rounded-xl hover:border-purple-500/50 transition group">
             <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition">
-              <Smartphone size={24} /> {/* N'oublie pas d'importer Smartphone de lucide-react */}
+              <Smartphone size={24} />
             </div>
             <div className="text-left">
               <p className="text-xs text-gray-500 uppercase font-bold">Téléphone</p>

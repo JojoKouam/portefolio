@@ -96,7 +96,7 @@ export const PROJECTS = [
     description: "Chatbot sur des question immobilier.",
     tech: ["HTML", "CSS", "JavaScript", "API"],
     link: "https://chatbot-immo-jodev.netlify.app/",
-    github: "#", 
+    github: "https://github.com/JojoKouam/chat_bot", 
   },
   
 ];
